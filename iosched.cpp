@@ -7,6 +7,7 @@
 #include "globals.h"
 #include <algorithm>
 #include <memory>
+#include <climits>
 
 using namespace std;
 
