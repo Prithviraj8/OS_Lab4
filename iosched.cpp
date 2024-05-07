@@ -6,6 +6,7 @@
 #include<sstream>
 #include "globals.h"
 #include <algorithm>
+#include <memory>
 
 using namespace std;
 
