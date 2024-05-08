@@ -383,9 +383,6 @@ void processCompletedRequests()
         current_request->endTime = current_time;
         total_turnaround += current_time - current_request->arrivalTime;
 
-        if (OPTION_V)
-            printf("%5d: %d finish %d\n", current_time, current_request->requestNumber, current_time - current_request->arrivalTime);
-
         addCompleted(*current_request);
         scheduler->removeRequest();
         current_request = nullptr;
@@ -476,7 +473,7 @@ void parseOptions(int argc, char* argv[]) {
                         case 'L': scheduler = new Look(); break;
                         case 'C': scheduler = new CLook(); break;
                         case 'F': scheduler = new FLook(); break;
-                        default: break; // Handle unexpected options
+                        default: scheduler = new FLook(); break;; // Handle unexpected options
                     }
                 }
                 break;
